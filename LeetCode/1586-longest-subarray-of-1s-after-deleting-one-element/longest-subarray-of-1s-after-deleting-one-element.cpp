@@ -10,7 +10,7 @@ public:
                 zeroCount++;
             }
 
-            if(zeroCount>1) {
+            while(zeroCount>1) {
                 if(nums[left]==0){
                     zeroCount--;
                 }
