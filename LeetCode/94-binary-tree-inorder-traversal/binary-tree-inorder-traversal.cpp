@@ -11,14 +11,14 @@
  */
 class Solution {
 private:
-    void inOrder(TreeNode* root,vector<int> &ans) {
-        if(root==NULL) {
+    void inOrder(TreeNode* node,vector<int> &ans) {
+        if(node==NULL) {
             return;
         }
         
-        inOrder(root->left,ans);
-        ans.push_back(root->val);
-        inOrder(root->right,ans);
+        inOrder(node->left,ans);
+        ans.push_back(node->val);
+        inOrder(node->right,ans);
     }
 
 public:
