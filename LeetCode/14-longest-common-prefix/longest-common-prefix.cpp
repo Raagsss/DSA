@@ -5,15 +5,11 @@ public:
             return "";
         }
 
-        int n=strs.size();
         string prefix=strs[0];
-
-        for(int i=0;i<n;i++) {
+        for(int i=0;i<strs.size();i++) {
             while(strs[i].find(prefix)!=0) {
-                prefix=prefix.substr(0,prefix.length()-1);
-                if(prefix.empty()) {
-                    return "";
-                }
+                prefix.pop_back();
+                if(prefix.empty()) return "";
             }
         }
         return prefix;
