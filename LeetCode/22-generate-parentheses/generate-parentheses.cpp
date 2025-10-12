@@ -1,24 +1,23 @@
 class Solution {
 private:
-    void generateParenthesis(int open,int close,string current,vector<string>& result) {
-        if(open==0 && close==0) {
-            result.push_back(current);
+    void solve(int n,int open,int close,string curr,vector<string>& res) {
+        if(curr.size()==2*n) {
+            return res.push_back(curr);
         }
 
-        if(open>0) {
-            generateParenthesis(open-1,close,current+"(",result);
+        if(open<n) {
+            solve(n,open+1,close,curr+"(",res);
         }
 
-        if(close>open) {
-            generateParenthesis(open,close-1,current+")",result);
+        if(close<open) {
+            solve(n,open,close+1,curr+")",res);
         }
     }
-
 public:
     vector<string> generateParenthesis(int n) {
-        vector<string> result;
-        generateParenthesis(n,n,"",result);
+        vector<string> res;
+        solve(n,0,0,"",res);
 
-        return result;
+        return res;
     }
 };
