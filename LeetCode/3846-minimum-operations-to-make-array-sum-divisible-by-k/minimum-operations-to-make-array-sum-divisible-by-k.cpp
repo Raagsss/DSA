@@ -7,7 +7,6 @@ public:
         }
 
         int operations=0;
-
         if(sum%k==0) {
             return 0;
         }
@@ -18,9 +17,6 @@ public:
         }
 
         return operations;
-
-
-
-
+        
     }
 };
