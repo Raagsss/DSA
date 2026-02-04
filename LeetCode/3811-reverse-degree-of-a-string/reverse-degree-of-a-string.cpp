@@ -1,13 +1,15 @@
 class Solution {
 public:
     int reverseDegree(string s) {
-        int total=0;
-        for(size_t i=0;i<s.length();i++) {
-            char c=tolower(s[i]);
-            if(c>='a'&& c<='z') {
-                total+=(i + 1)*(26-(c-'a'));
-            }
+        int sum=0;
+
+        for(int i=0;i<s.length();i++) {
+            int idx=26-(s[i]-'a');
+            int index=i+1;
+
+            sum+=idx*index;
         }
-        return total;
+
+        return sum;
     }
 };
